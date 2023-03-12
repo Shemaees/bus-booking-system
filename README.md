@@ -29,3 +29,14 @@ For Example:
 
     Laravel - The web framework used
 
+## Dashboard link
+
+    APP_URL/dashboard/login
+### dashboard credentials
+    Email: admin@bus-booking-system.com
+    Password: password
+## Api link
+    APP_URL/api/
+### Api credentials
+    Email: mahmoudshemaees@gmail.com
+    password: password

@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "37ee5fa6-43b6-4089-8e7c-869185682675",
+		"name": "Bus-Booking-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7101876"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mahmoudshemaees@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/users/auth/login",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trips",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnVzLWJvb2tpbmctc3lzdGVtLnRlc3QvYXBpL3VzZXJzL2F1dGgvbG9naW4iLCJpYXQiOjE2Nzg1Nzk2NjEsImV4cCI6MTY3ODU4MzI2MSwibmJmIjoxNjc4NTc5NjYxLCJqdGkiOiJUNUhwejlLc3dWaTMwVkYyIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.JmgKGe-07d-MJjRyc8qP_tPeBP14Ui38Es8k1QW7HNM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_url}}/users/trips",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show trip",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnVzLWJvb2tpbmctc3lzdGVtLnRlc3QvYXBpL3VzZXJzL2F1dGgvbG9naW4iLCJpYXQiOjE2Nzg1Nzk2NjEsImV4cCI6MTY3ODU4MzI2MSwibmJmIjoxNjc4NTc5NjYxLCJqdGkiOiJUNUhwejlLc3dWaTMwVkYyIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.JmgKGe-07d-MJjRyc8qP_tPeBP14Ui38Es8k1QW7HNM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_url}}/users/trips/1",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"trips",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show available seats in trip",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnVzLWJvb2tpbmctc3lzdGVtLnRlc3QvYXBpL3VzZXJzL2F1dGgvbG9naW4iLCJpYXQiOjE2Nzg1Nzk2NjEsImV4cCI6MTY3ODU4MzI2MSwibmJmIjoxNjc4NTc5NjYxLCJqdGkiOiJUNUhwejlLc3dWaTMwVkYyIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.JmgKGe-07d-MJjRyc8qP_tPeBP14Ui38Es8k1QW7HNM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"trip_id\": 1,\n    \"start_station_id\": 1,\n    \"end_station_id\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/users/trips/available/seats",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"trips",
+						"available",
+						"seats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book a seat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYnVzLWJvb2tpbmctc3lzdGVtLnRlc3QvYXBpL3VzZXJzL2F1dGgvbG9naW4iLCJpYXQiOjE2Nzg1Nzk2NjEsImV4cCI6MTY3ODU4MzI2MSwibmJmIjoxNjc4NTc5NjYxLCJqdGkiOiJUNUhwejlLc3dWaTMwVkYyIiwic3ViIjoiMTEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.JmgKGe-07d-MJjRyc8qP_tPeBP14Ui38Es8k1QW7HNM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"trip_id\": 1,\n    \"start_station_id\": 1,\n    \"end_station_id\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_url}}/users/trips/available/seats",
+					"host": [
+						"{{local_url}}"
+					],
+					"path": [
+						"users",
+						"trips",
+						"available",
+						"seats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url",
+			"value": "http://bus-booking-system.test/api",
+			"type": "string"
+		}
+	]
+}
